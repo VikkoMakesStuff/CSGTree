@@ -1,3 +1,3 @@
-[submodule "CSGTree/SupportLibrary"]
-	path = CSGTree/SupportLibrary
+[submodule "CSGTree/SupportLibrary.luau"]
+	path = CSGTree/SupportLibrary.luau
 	url = https://github.com/F3XTeam/RBX-Support-Library
