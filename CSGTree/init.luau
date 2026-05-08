@@ -24,8 +24,8 @@ local GeometryService = game:GetService("GeometryService")
 -- MODULES
 -- ==================================
 
-local PropScan = require(script.Parent.PropScan)
-local Support = require(script.Parent.SupportLibrary)
+local PropScan = require(script.PropScan)
+local Support = require(script.SupportLibrary)
 
 -- ==================================
 -- CONFIGURATION
@@ -36,11 +36,11 @@ local Support = require(script.Parent.SupportLibrary)
 type ItemsData = {}
 
 -- You can put the serialization method here
-CSGTree.Serialize = function(Items: { [number]: Instance }, ReferenceCFrame: CFrame?): ItemsData
+CSGTree.Serialize = function(Items: { [number]: Instance }, ReferenceCFrame: CFrame?)
 end
 
 -- You can put the desialize method here
-CSGTree.Desialize = function(Data: ItemsData, DesiredCFrame: CFrame?): {Instance}
+CSGTree.Desialize = function(Data: ItemsData, DesiredCFrame: CFrame?)
 end
 
 -- ==================================
