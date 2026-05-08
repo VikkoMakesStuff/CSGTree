@@ -1,0 +1,6 @@
+{
+  "name": "@vikkomakesstuff/fork3x",
+  "dependencies": {
+    "@f3xteam/rbx-support-library": "^1.0.0"
+  }
+}
