@@ -26,7 +26,6 @@ local GeometryService = game:GetService("GeometryService")
 
 local PropScan = require(script.Parent.PropScan)
 local Support = require(script.Parent.SupportLibrary)
-local CSGTreeV1 = require(script.Parent.CSGTreeV1)
 
 -- ==================================
 -- CONFIGURATION
@@ -34,45 +33,14 @@ local CSGTreeV1 = require(script.Parent.CSGTreeV1)
 
 -- You can also type check the serialized data if you want
 -- If you don't, just put any
-type ItemsData = {
-	["Version"]: number,
-	["Items"]: {
-		[string]: {
-			[number]: any
-		},
-	}
-}
+type ItemsData = {}
 
 -- You can put the serialization method here
 CSGTree.Serialize = function(Items: { [number]: Instance }, ReferenceCFrame: CFrame?): ItemsData
-	type Serializer = { 
-		["SerializeModel"]: ( { [number]: Instance }, CFrame? ) -> ItemsData
-	}
-	
-	local ItemsToSerialize = table.clone(Items);
-	
-	for _, Item in Items do
-		Support.ConcatTable(ItemsToSerialize, Item:GetDescendants());
-	end;
-
-	local SerializationModule: Serializer = require(script.Parent.SerializationV6)() :: Serializer
-
-	return SerializationModule.SerializeModel(ItemsToSerialize, ReferenceCFrame)
 end
 
 -- You can put the desialize method here
 CSGTree.Desialize = function(Data: ItemsData, DesiredCFrame: CFrame?): {Instance}
-	type Serializer = { 
-		["InflateBuildData"]: ( ItemsData, boolean?, CFrame? ) -> {Instance}
-	}
-
-	local VersionsToModule: {Serializer} = {
-		[6] = require(script.Parent.SerializationV6)() :: Serializer
-	}
-
-	local SerializationModule: Serializer = VersionsToModule[Data.Version]
-
-	return SerializationModule.InflateBuildData(Data, nil, DesiredCFrame)
 end
 
 -- ==================================
@@ -501,11 +469,6 @@ end
 
 -- Returns an array of unions from the given tree at the given CFrame, with optional Parameters.
 function CSGTree.CreateUnionFromTree( Tree: CSGHandler, DesiredCFrame: CFrame, Parameters: CSGParameters ): ({TriangleMeshPart}, CFrame)
-	-- If the tree is a legacy one, use the old module
-	if not Tree.Version then
-		return {CSGTreeV1.CreateFromTree( Tree, Parameters, DesiredCFrame, TableToPart )}
-	end
-
 	-- Create a list of every union
 	local Unions = {}
 
