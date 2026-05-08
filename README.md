@@ -113,4 +113,4 @@ Here's a list of every function in CSGTree, with their parameters highlighted in
 
 The best demonstration I can suggest are my own tools [Fork3X](https://github.com/VikkoMakesStuff/Fork3X). Most features are used there, and this gives a great overview on what this module allows.
 
-Credits to @F3X for [SupportLibrary](https://github.com/F3XTeam/RBX-Support-Library)!
+Credits to @GigsD4X and the @F3XTeam for [SupportLibrary](https://github.com/F3XTeam/RBX-Support-Library)!
