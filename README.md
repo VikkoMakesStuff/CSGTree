@@ -26,7 +26,7 @@ If this list includes something you need, **CSGTree can make it possible.**
   
 - **Strict typing**: The module has been built with strict typing, which prevents mistakes caused by putting the wrong classes.
 
-- **An encoding-ready architecture:** Only numbers, tables, dictionaries and strings are stored in CSG trees, so they can be encoded in any format, including JSON.
+- **An encoding-ready architecture:** Only numbers, tables, dictionaries and strings are stored in CSG trees, so they can be saved on datastores and encoded into any format, including JSON.
 
 ## Documentation
 
